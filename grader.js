@@ -57,7 +57,7 @@ var loadChecks = function(checksfile)
 
 var checkHtmlFile = function(htmlfile, checksfile) 
 {
-    console.log("checking html file\n");
+    //console.log("checking html file\n");
     $ = cheerioHtmlFile(htmlfile);
     var checks = loadChecks(checksfile).sort();
     var out = {};
@@ -72,7 +72,7 @@ var checkHtmlFile = function(htmlfile, checksfile)
 
 var checkHtmlString = function(htmlString, checksfile) 
 {
-    console.log("checking html string\n");
+    //console.log("checking html string\n");
     $ = cheerio.load(htmlString);
     var checks = loadChecks(checksfile).sort();
     var out = {};
@@ -109,7 +109,7 @@ if(require.main == module)
     }
     else
     {
-        console.log("file: "+program.file+"\n");
+        //console.log("file: "+program.file+"\n");
         var checkJson = checkHtmlFile(program.file, program.checks);
         var outJson = JSON.stringify(checkJson, null, 4);
         console.log(outJson);
